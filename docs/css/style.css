@@ -16,18 +16,22 @@ img{
 }
 
 #menu, #juego, #agregarPalabra{
-  display: flex;
+  display: inline;
   width: auto;
   height: 500px;
+  padding: 0px;
+  margin-top: 0px;
+  position: relative;
 }
 
-#btnInicio{
-  display: flex;
+#juego, #agregarPalabra{
+  display: none;
+}
+
+#btnInicio, #btnSave{
   align-items: center;
-  margin-top: 15%;
-  margin-left: auto;
-  margin-right: auto;
-  margin-bottom: 20%;
+  margin-top: 10%;
+  margin-left: 15%;
   background: #0A3871;
   border-radius: 24px;
   width: 317px;
@@ -38,11 +42,10 @@ img{
   justify-content: center;
 }
 
-#btnNueva{
-  display: flex;
+#btnNueva, #btnCancel{
   align-items: center;
   margin-top: 15%;
-  margin-left: auto;
+  margin-left: 10%;
   margin-right: auto;
   margin-bottom: 20%;
   background: #F3F5FC;
@@ -54,9 +57,18 @@ img{
   color: #0A3871;
   justify-content: center;
 }
-#juego , #agregarPalabra{
-  display: none;
+
+#ingresarPalabra{
+  background-color: #F3F5FC;
+  color: #0A3871;
+  margin-top: 10%;
+  margin-left: 30%;
+  margin-right: auto;
+  outline: none;
+  border: none;
+  font-size: 25px;
 }
+
 footer {
   color: black;
   font-size: 12px;
