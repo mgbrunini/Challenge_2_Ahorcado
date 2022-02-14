@@ -19,4 +19,8 @@ var nuevaPalabra = document.querySelector("#btnSave");
 nuevaPalabra.addEventListener("click",function() {
   palabraagregada = document.querySelector("#ingresarPalabra");
   console.log(palabraagregada.value.toUpperCase());
+  palabra.push(palabraagregada.value.toUpperCase())
+  console.log(palabra);
+  document.getElementById("agregarPalabra").style.display = "none";
+  document.getElementById("juego").style.display = "block";
 })
