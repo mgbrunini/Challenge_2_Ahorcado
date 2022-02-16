@@ -68,6 +68,18 @@ img{
   border: none;
   font-size: 25px;
 }
+.abc{
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.abc button{
+  font-size: 25px;
+  border-radius: 30px;
+  margin-left: 2%;
+  margin-top: 1%;
+}
 
 footer {
   color: black;
@@ -81,6 +93,7 @@ footer {
   align-self: flex-end;
   padding-top: 20px;
   box-shadow: 2px -1px 5px #999;
+  margin-top: 50px;
 }
 .redes_sociales {
   list-style: none;

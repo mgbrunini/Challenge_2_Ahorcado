@@ -1,4 +1,4 @@
-var palabra = ['ALURA', 'ORACLE', 'ONE'];
+var palabra = ['ALURA', 'ORACLE', 'ANANA'];
 
 //boton cancelar - home
 var cancelar = document.querySelector("#btnCancel");
@@ -6,14 +6,18 @@ cancelar.addEventListener("click",function() {
   document.getElementById("agregarPalabra").style.display = "none";
   document.getElementById("menu").style.display = "block";
 })
-
+var tamaño = 0;
+var split = "";
+var aleatorio = "";
 function palabraAzar() {
-  let aleatorio = palabra[Math.floor(Math.random()*palabra.length)];
+  aleatorio = palabra[Math.floor(Math.random()*palabra.length)];
   console.log(aleatorio);
-  let split = aleatorio.split('');
-  console.log(split);
+  split = aleatorio.split('');
+  tamaño = split.length;
+  return tamaño;
+  return split;
+  return aleatorio;
 }
-
 //Ingresar palabra
 var nuevaPalabra = document.querySelector("#btnSave");
 nuevaPalabra.addEventListener("click",function() {
