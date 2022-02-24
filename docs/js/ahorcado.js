@@ -1,12 +1,14 @@
 var pantalla = document.querySelector("#ahorcado");
 var pincel = pantalla.getContext("2d");
 
+
+
 //Comienza el Juego
 function inicio() {
   palabraAzar();
   lineas(tamaño);
   base();
-  validacion()
+  validar();
 }
 
 //lineas
@@ -25,6 +27,39 @@ function lineas(tamaño) {
     pincel.stroke();
   }
 }
+
+function validar() {
+  var x = 300;
+  document.addEventListener("keydown", function() {
+    console.log(event);
+    var letraPrecionada = event.key.toUpperCase();
+
+    for (var i = 0; i < split.length; i++) {
+      console.log(letraPrecionada," - ",split[i]);
+      if (letraPrecionada == split[i]) {
+        pincel.font = "40px Georgia" //importamos la letra
+        pincel.fillStyle = "blue"; //color del pincel
+        pincel.fillText(event.key,x,40); //escritura de prueba
+        x = x + 20;
+        pincel.fillText(" - " ,x,40);
+        x = x + 30;
+      }else {
+        pincel.font = "40px Georgia" //importamos la letra
+        pincel.fillStyle = "red"; //color del pincel
+        pincel.fillText(event.key,x,40); //escritura de prueba
+        x = x + 20;
+        pincel.fillText(" - " ,x,40);
+        x = x + 30;
+      }
+    }
+  })
+}
+
+
+
+
+
+
 
 function base(){
   pincel.fillStyle = "lightblue"
@@ -91,46 +126,4 @@ function piernaDer() {
   pincel.lineTo(220,100);
   pincel.stroke();
   alert("Perdiste, la palabra correcta era " + aleatorio);
-}
-
-var letra = "";
-//letras
-function validacion() {
-  letra = document.querySelector("#A").id;
-  letra = document.querySelector("#B").id;
-  letra = document.querySelector("#C").id;
-  letra = document.querySelector("#D").id;
-  letra = document.querySelector("#E").id;
-  letra = document.querySelector("#F").id;
-  letra = document.querySelector("#G").id;
-  letra = document.querySelector("#H").id;
-  letra = document.querySelector("#I").id;
-  letra = document.querySelector("#J").id;
-  letra = document.querySelector("#K").id;
-  letra = document.querySelector("#L").id;
-  letra = document.querySelector("#M").id;
-  letra = document.querySelector("#N").id;
-  letra = document.querySelector("#Ñ").id;
-  letra = document.querySelector("#O").id;
-  letra = document.querySelector("#P").id;
-  letra = document.querySelector("#Q").id;
-  letra = document.querySelector("#R").id;
-  letra = document.querySelector("#S").id;
-  letra = document.querySelector("#T").id;
-  letra = document.querySelector("#U").id;
-  letra = document.querySelector("#V").id;
-  letra = document.querySelector("#W").id;
-  letra = document.querySelector("#X").id;
-  letra = document.querySelector("#Y").id;
-  letra = document.querySelector("#Z").id;
-
-  console.log(letra);
-  //letra.addEventListener("click",function(){
-  //  console.log(letra.id);
-  //  for (var i = 0; i < split.length; i++) {
-  //    if (letra.id == split[i]) {
-  //      console.log("la letra coincide");
-  //    }
-  //  }
-  //})
 }
